@@ -6,7 +6,7 @@ let correctAnswer;
 
 //Нажатие на кнопку старт/ресет
 document.getElementById("startReset").onclick = function () {
-    if (playing == true) {    //Играем ли в данный момент
+    if (playing == true) {
 
         location.reload()//перезагрузит страницу
 
@@ -16,18 +16,16 @@ document.getElementById("startReset").onclick = function () {
 
         score = 0;
 
-        document.getElementById("scoreValue").innerHTML = score; // Присваиваем значение текущее
-        show("timeRemaining");//Отображаем оставшее время
+        document.getElementById("scoreValue").innerHTML = score;
+        show("timeRemaining");
         timeRemaining = 60;
         document.getElementById("timeRemainingValue").innerHTML = timeRemaining;
 
         hide("gameOver");
 
-        document.getElementById("startReset").innerHTML = "Reset Game";//Замена названия старт на ресет
+        document.getElementById("startReset").innerHTML = "Reset Game";
 
-        //Начало отсчета времени
         startCountdown();
-        //Создание нового вопроса и ответа
         generateQA();
     }
 };
@@ -104,9 +102,6 @@ function generateQA() {
 
             document.getElementById("box" + i).innerHTML = wrongAnswer;
             answers.push(wrongAnswer);
-
         }
     }
-
-
 }
